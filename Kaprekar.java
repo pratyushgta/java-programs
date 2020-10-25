@@ -28,7 +28,7 @@ class Kaprekar
         }
         else
         {
-            int N=n*n;
+            int sq=n*n;
             int temp=n;
             int c=0;
             while(temp!=0)
@@ -36,8 +36,8 @@ class Kaprekar
                 temp=temp/10;
                 c++;
             }
-            int left=(int)(N/Math.pow(10,c)); //left hand piece
-            int right=(int)(N%Math.pow(10,c)); //right hand piece
+            int left=(int)(sq/Math.pow(10,c)); //left hand piece
+            int right=(int)(sq%Math.pow(10,c)); //right hand piece
             if(left+right==n)
             {
                 return 1;

@@ -57,7 +57,7 @@ final class compute extends library
         double total=((0.02*price)*d)+f;
         super.show();
         System.out.println("\nBook taken for: "+d+" days");
-        System.out.println("Total fine: "+f);
+        System.out.println("Total fine: Rs."+f);
         System.out.println("Total amount: Rs."+total);
     }
 }

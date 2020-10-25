@@ -19,21 +19,21 @@ class Decoder
 
             num=Float.parseFloat(storech);
 
-            if(num>=65&&num<=90||num>=97&&num<=122)
+            if(num>=65&&num<=90||num>=97&&num<=122||num==32)
             {
                 word=word+(char)num;
                 num=0;
                 storech="";
             }
-            else if(num==32)
+            /*else if(num==32)
             {
-                word=word+(char)num;
-                num=0;
-                storech="";
+            word=word+(char)num;
+            num=0;
+            storech="";
             }
             else
             {
-            }
+            }*/
         }
         return word;
     }
