@@ -1,12 +1,12 @@
 import java.io.*;
-class Repeat
+class Repeat1
 {
     int st[];
     int cap;
     int front;
     int rear;
     //parameterized constructor to initialize data members
-    Repeat(int s)
+    Repeat1(int s)
     {
         st=new int[100];
         cap=s;
@@ -32,16 +32,49 @@ class Repeat
             rear++;  
         }
     }
-    //to remove and return the element from front, if possible
-    int pop()
+
+    void push1(int x)
     {
-        if(front<=rear)
+        if(rear<cap)
         {
-            return  st[front++];
+            st[++rear]=x;
         }
         else
         {
+            System.out.println("No space");
+        }
+    }
+
+    int pop1()
+    {
+        if(front<=rear){
+            return  st[front++];
+        }
+        else{
             return -111;
+        }
+    }
+    //to remove and return the element from front, if possible
+    int pop()
+    {
+        int element;
+        if(front==-1)
+        {
+            System.out.println("Array is empty"); //deletions can occur at the front only
+            return -111;
+        }
+        else
+        {
+            element=st[front];
+            if(front==rear)
+            {
+                front=rear=-1;
+            }
+            else
+            {
+                front++;
+            }
+            return element;
         }
     }
 
@@ -60,7 +93,7 @@ class Repeat
         BufferedReader br=new BufferedReader(isr);
         System.out.println("Enter number of elements in array: ");
         int no=Integer.parseInt(br.readLine());
-        Repeat ob=new Repeat(no);
+        Repeat1 ob=new Repeat1(no);
         System.out.println("Enter "+no+" elements");
         for(int i=0;i<no;i++)
         {

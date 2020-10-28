@@ -84,7 +84,7 @@ public class TestBin
         while(ch!=5)
         {
             System.out.println("\nMENU");
-            System.out.println("1.Insert\n2.Pre-order Dispaly\n3.In-order Display\n4.Post-Order Display\n5.Exit");
+            System.out.println("1.Insert\n2.Pre-order Display\n3.In-order Display\n4.Post-Order Display\n5.Exit");
             System.out.println("\nEnter your choice");
             ch=Integer.parseInt(br.readLine());
 

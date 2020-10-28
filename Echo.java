@@ -4,6 +4,13 @@ class Echo
     String names[];
     int cap;
     int top;
+
+    Echo(int s)
+    {
+        names=new String[100];
+        cap=s;
+        top=-1;
+    }
     //to add a name to the array at the top position, if possible
     void push(String S)
     {
@@ -30,6 +37,15 @@ class Echo
             element=names[top];
             top--;
             return element;
+        }
+    }
+
+    void print()
+    {
+        System.out.println("ARRAY ELEMENTS: ");
+        for(int i=0;i<=top;i++)
+        {
+            System.out.println(names[i]);
         }
     }
 }
