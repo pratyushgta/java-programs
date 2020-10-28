@@ -39,8 +39,10 @@ class Shift
     {
         int n=S1.Arr.length;
         int m=S2.Arr.length;
+        int max=0;
+        int min=0;
 
-        if(S1.N>S2.N)
+        if(n>m)
         {
             Arr=new int[n];
             for(int i=0;i<n;i++)
@@ -48,7 +50,7 @@ class Shift
                 Arr[i]=S1.Arr[i];
             }
         }
-        else if(S2.N>S1.N)
+        else if(n<m)
         {
             Arr=new int[m];
             for(int j=0;j<m;j++)
@@ -56,12 +58,50 @@ class Shift
                 Arr[j]=S2.Arr[j];
             }
         }
-        else
+        else if(n==m)
         {
-            Arr=new int[n];
+            int S1max=0;
+            int S2max=0;
             for(int i=0;i<n;i++)
             {
-                Arr[i]=S1.Arr[i];
+                if(S1.Arr[i]>S2.Arr[i])
+                {
+                    S1max++;
+                }
+                else if(S1.Arr[i]<S2.Arr[i])
+                {
+                    S2max++;
+                }
+                else
+                {
+                    S1max++;
+                    S2max++;
+                }
+            }
+
+            if(S1max>S2max)
+            {
+                Arr=new int[n];
+                for(int i=0;i<n;i++)
+                {
+                    Arr[i]=S1.Arr[i];
+                }
+            }
+            else if(S1max<S2max)
+            {
+                Arr=new int[m];
+                for(int i=0;i<m;i++)
+                {
+                    Arr[i]=S2.Arr[i];
+                }
+            }
+            else
+            {
+                Arr=new int[n];
+                for(int i=0;i<n;i++)
+                {
+                    Arr[i]=S1.Arr[i];
+                }
             }
         }
     }
@@ -87,4 +127,3 @@ class Shift
         ob.display();
     }
 }
-
