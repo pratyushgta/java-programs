@@ -34,7 +34,7 @@ class Binary
         {
             b.left=insert(b.left,k);
         }
-            else// if above condition is false then data is greater and has to be stored on right of tree
+        else// if above condition is false then data is greater and has to be stored on right of tree
         {
             b.right=insert(b.right,k);
         }

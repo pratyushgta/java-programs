@@ -39,8 +39,6 @@ class Shift
     {
         int n=S1.Arr.length;
         int m=S2.Arr.length;
-        int max=0;
-        int min=0;
 
         if(n>m)
         {
@@ -60,26 +58,26 @@ class Shift
         }
         else if(n==m)
         {
-            int S1max=0;
-            int S2max=0;
+            int S1counter=0;
+            int S2counter=0;
             for(int i=0;i<n;i++)
             {
                 if(S1.Arr[i]>S2.Arr[i])
                 {
-                    S1max++;
+                    S1counter++;
                 }
                 else if(S1.Arr[i]<S2.Arr[i])
                 {
-                    S2max++;
+                    S2counter++;
                 }
                 else
                 {
-                    S1max++;
-                    S2max++;
+                    S1counter++;
+                    S2counter++;
                 }
             }
 
-            if(S1max>S2max)
+            if(S1counter>S2counter)
             {
                 Arr=new int[n];
                 for(int i=0;i<n;i++)
@@ -87,7 +85,7 @@ class Shift
                     Arr[i]=S1.Arr[i];
                 }
             }
-            else if(S1max<S2max)
+            else if(S1counter<S2counter)
             {
                 Arr=new int[m];
                 for(int i=0;i<m;i++)

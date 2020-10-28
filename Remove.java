@@ -23,7 +23,7 @@ class Remove
         len=str.length();
     }
     //to extract each word and remove first and last alphabet of word
-    void remfand1()
+    void remfandl()
     {
         StringTokenizer st = new StringTokenizer(str);
         int count=st.countTokens();
@@ -52,7 +52,7 @@ class Remove
     {
         Remove ob=new Remove();
         ob.read();
-        ob.remfand1();
+        ob.remfandl();
         ob.display();
     }
 }

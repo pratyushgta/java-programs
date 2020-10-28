@@ -8,24 +8,25 @@ class Automorphic
     {
         N=0;
     }
-
+    //default constructor to initialize data members
     Automorphic(int n) 
     {
         N=n;
     }
+    //to read a number from the user
 
     void read() throws IOException
     {
         System.out.print("Enter a number : ");
         N=Integer.parseInt(br.readLine());
     }
-
+    //to find and return the square of the number
     int square(int n)
     {
         int sq=N*N;
         return sq;
     }
-
+    //to check whether the number is Automorphic no. or not
     void check()
     {
         int sq=square(N);
