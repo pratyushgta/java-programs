@@ -35,20 +35,36 @@ class Rearrange
         }
     }
     //to insert an item at a specified position in the array
-    void insert(int p, int item) throws IOException
+    void insert1(int p, int item) throws IOException
     {
-        if(p>N)
+        if(p>N||p<=0)
         {
-            System.out.println("Invaid Position"); //error if insert position exceeds array length
+            System.out.println("Invalid Position");
         }
         else
         {
             N++;
-            for(int k=N;k<p-1;k--)
+            int newArr[]=new int[N];
+            for(int i=0;i<N;i++)
             {
-                Arr[k]=Arr[k-1];
+                if(i<p-1)
+                {
+                    newArr[i]=Arr[i];
+                }
+                else if(i==p-1)
+                {
+                    newArr[i]=item;
+                }
+                else
+                {
+                    newArr[i]=Arr[i-1];
+                }
             }
-            Arr[p-1]=item;
+            Arr=new int[N];
+            for(int j=0;j<N;j++)
+            {
+                Arr[j]=newArr[j];
+            }
         }
     }
     //to delete an item at specified position from the array
