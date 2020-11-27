@@ -42,13 +42,12 @@ class Combine
             com[i] = com[pos];
             com[pos] = temp;
         }
-        /*for(int i=0;i<com.length;i++)
+        for(int i=0;i<com.length;i++)
         {
             if(com[i]!=0)
                 System.out.println(com[i]);
-        }*/
+        }
     }
-
     //to combine the two arrays and store in the current object
     void union(Combine A, Combine B)
     {

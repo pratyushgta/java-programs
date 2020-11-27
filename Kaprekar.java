@@ -52,17 +52,21 @@ class Kaprekar
     void kaprekar_numbers()
     {
         int freq=0;
-        System.out.println("\nKaprekar Numbers are between "+p+" & "+q+" are: ");
+        System.out.println("\nKaprekar Numbers between "+p+" & "+q+" are: ");
         for(int i=p;i<q;i++)
         {
             int r=check(i);
             if(r==1)
             {
+                if(i>p && freq>0)
+                {
+                    System.out.print(",");
+                }
+                System.out.print(i);
                 freq++;
-                System.out.println(i);
             }
         }
-        System.out.println("\nFrequency of Kaprekar Numbers: "+freq);
+        System.out.println("\n\nFrequency of Kaprekar Numbers: "+freq);
     }
 
     void main() throws IOException

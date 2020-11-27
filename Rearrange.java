@@ -35,7 +35,7 @@ class Rearrange
         }
     }
     //to insert an item at a specified position in the array
-    void insert1(int p, int item) throws IOException
+    void insert(int p, int item) throws IOException
     {
         if(p>N||p<=0)
         {
