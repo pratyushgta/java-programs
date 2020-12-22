@@ -39,7 +39,7 @@ class Rearrange
     {
         if(p>N||p<=0)
         {
-            System.out.println("Invalid Position");
+            System.out.println("Invalid Position"); //error if insert position exceeds array le
         }
         else
         {
@@ -85,25 +85,3 @@ class Rearrange
     }
 }
 
-/*void main() throws IOException
-{
-Rearrange ob=new Rearrange();
-ob.enter();
-
-System.out.print("Enter position of element to delete: ");
-int pos1=Integer.parseInt(br.readLine());
-ob.remove(pos1);
-System.out.println("\nARRAY AFTER DELETION: "); 
-ob.display();
-
-System.out.print("Enter element to insert: ");
-int insert=Integer.parseInt(br.readLine());
-
-System.out.print("Enter its position: ");
-int pos=Integer.parseInt(br.readLine());
-ob.insert(pos,insert);
-System.out.println("\nARRAY AFTER INSERTION: "); 
-ob.display();
-
-}
-}*/

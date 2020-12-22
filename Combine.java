@@ -17,7 +17,6 @@ class Combine
     void input()throws IOException
     {
         System.out.println("Enter "+size+" elements: ");
-        int freq=0;
         for(int i=0; i<size;i++)
         {
             com[i] = Integer.parseInt(br.readLine());   

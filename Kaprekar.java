@@ -1,4 +1,4 @@
-import java.io.*;
+  import java.io.*;
 class Kaprekar
 {
     InputStreamReader isr=new InputStreamReader(System.in);
@@ -60,7 +60,7 @@ class Kaprekar
             {
                 if(i>p && freq>0)
                 {
-                    System.out.print(",");
+                    System.out.print(", ");
                 }
                 System.out.print(i);
                 freq++;

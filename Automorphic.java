@@ -14,7 +14,6 @@ class Automorphic
         N=n;
     }
     //to read a number from the user
-
     void read() throws IOException
     {
         System.out.print("Enter a number : ");

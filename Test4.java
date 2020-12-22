@@ -74,7 +74,7 @@ final class Compound extends Account
     }
 }
 
-public class ACCOUNTtesting
+public class Test4
 {
     public static void main() throws IOException
     {
