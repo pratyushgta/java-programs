@@ -16,7 +16,7 @@ class Convert
         System.out.print("Enter  number 2 : ");
         N=Integer.parseInt(br.readLine());
     }
-    //to convert octal number to decimal form and display the sum in decimal	
+    //to convert octal number to decimal form and display the sum in decimal    
     void octtodec()
     {
         int d= 0;

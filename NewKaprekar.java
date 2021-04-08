@@ -1,11 +1,11 @@
 import java.io.*;
-class Kaprekar
+class NewKaprekar
 {
     InputStreamReader isr=new InputStreamReader(System.in);
     BufferedReader br=new BufferedReader(isr);
     int p, q;
     //default constructor to initialize data members
-    Kaprekar()
+    NewKaprekar()
     {
         p=0;
         q=0;
@@ -71,7 +71,7 @@ class Kaprekar
 
     void main() throws IOException
     {
-        Kaprekar ob=new Kaprekar();
+        NewKaprekar ob=new NewKaprekar();
         ob.read();
         ob.kaprekar_numbers();
     }
