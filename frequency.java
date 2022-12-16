@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 class frequency
 {
-    InputStreamReader isr=new InputStreamReader(System.in);
+    /*InputStreamReader isr=new InputStreamReader(System.in);
     BufferedReader br=new BufferedReader(isr);
 
     int n;
@@ -41,7 +41,7 @@ int index=0;
                 //strArr[
             }
         }
-    }
+    }*/
 }
             
  

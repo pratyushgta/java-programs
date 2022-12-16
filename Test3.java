@@ -1,12 +1,12 @@
 import java.io.*;
-class record
+class records
 {
     InputStreamReader isr=new InputStreamReader(System.in);
     BufferedReader br=new BufferedReader(isr);
     String n[];
     int m[];
     int size;
-    record(int cap)
+    records(int cap)
     {
         size=cap;
         n=new String[cap];
@@ -38,7 +38,7 @@ class record
     }
 }
 
-class highest extends record
+class highest extends records
 {
     int ind=0;
 
