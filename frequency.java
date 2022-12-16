@@ -38,6 +38,10 @@ int index=0;
             while(st.hasMoreTokens())
             {
                 sArr[index++]=st.nextToken();
-                strArr[
+                //strArr[
+            }
+        }
+    }
+}
             
  

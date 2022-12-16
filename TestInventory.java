@@ -16,8 +16,7 @@ class Inventory
         Amt=a;
     }
 
-    void display()
-    {
+    void display() throws IOException {
         System.out.println("PRODUCT DETAILS ");
         System.out.println("Name\t\tRate\tQty\tAmount");
         System.out.println(Prod+"\t\t"+Rate+"\t"+Rate+"\t"+Qty+"\t"+Amt);
@@ -43,17 +42,16 @@ class Sell extends Inventory
         Sqty=Integer.parseInt(br.readLine());
         System.out.println("Enter new rate: ");
         Srate=Integer.parseInt(br.readLine());
-        
+
         Qty+=Sqty;
-        
+
         if(Srate!=Rate)
         {
             Rate=Srate;
         }
     }
 
-    void display()
-    {
+    void display() throws IOException {
         System.out.println("BEFORE UPDATION");
         super.display();
         update();
@@ -70,10 +68,9 @@ public class TestInventory
         BufferedReader br=new BufferedReader(isr);
         System.out.print("Enter array size: ");
         int asize=Integer.parseInt(br.readLine());
-        TestInventory obj=new TestInventory(asize);
-        obj.readarray();
-        obj.find();
-        obj.display();
+        //TestInventory obj=new TestInventory(asize);
+        //obj.readarray();
+       // obj.find();
+        //obj.display();
     }
 }     
-
