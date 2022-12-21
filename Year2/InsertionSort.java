@@ -1,6 +1,11 @@
 package Year2;
 
 import java.util.*;
+
+/**
+ * This class contains methods for performing Insertion Sort
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
 public class InsertionSort {
 
     public static void main(String[] args){
@@ -11,7 +16,7 @@ public class InsertionSort {
         System.out.print("Enter number of array elements: ");
         int size = sc.nextInt();
 
-        int [] arr = new int[size];
+        int [] arr = new int[size]; //Initializing the array with given size
 
         System.out.println("Enter "+size+" elements:");
         for(int i=0; i<size; i++){
