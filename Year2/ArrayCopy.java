@@ -2,6 +2,11 @@ package Year2;
 
 import java.util.Scanner;
 
+/**
+ * This class contains methods for copying data of array to another array
+ * E1-Q4
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
 public class ArrayCopy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

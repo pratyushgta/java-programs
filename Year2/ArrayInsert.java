@@ -2,6 +2,12 @@ package Year2;
 
 import java.util.Scanner;
 
+/**
+ * This class contains methods for performing I/O in Arrays
+ * E1-Q1
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
+
 public class ArrayInsert {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);

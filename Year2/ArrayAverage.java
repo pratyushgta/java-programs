@@ -2,6 +2,11 @@ package Year2;
 
 import java.util.Scanner;
 
+/**
+ * This class contains methods for finding average of 10 array elements
+ * E1-Q5
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
 public class ArrayAverage {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

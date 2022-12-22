@@ -2,6 +2,11 @@ package Year2;
 
 import java.util.Scanner;
 
+/**
+ * This class contains methods for reversing array elements
+ * E1-Q2
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
 public class ArrayReverse {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
