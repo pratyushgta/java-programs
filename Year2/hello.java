@@ -3,6 +3,11 @@ package Year2;
 import java.util.*;
 import java.io.*;
 
+/**
+ * This class contains methods for testing basic functions
+ * OOPJ
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
  class hello {
      Scanner sc = new Scanner(System.in);
 

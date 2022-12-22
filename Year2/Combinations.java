@@ -1,5 +1,10 @@
 package Year2;
 
+/**
+ * This class contains methods for printing all possible combinations of truth values
+ * E2-Q2
+ * @author Pratyush Kumar (pratyushgta@gmail.com)
+ */
 public class Combinations {
     public static void main(String[] args) {
         int n = 4;
