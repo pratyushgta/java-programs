@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * This class contains methods for performing I/O in Arrays
  * DAA-E1-Q1
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
 public class ArrayInsert {

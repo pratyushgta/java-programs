@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * This class contains methods for finding average of 10 array elements
  * DAA-E1-Q5
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class ArrayAverage {
     public static void main(String[] args) {

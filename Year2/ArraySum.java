@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * This class contains methods for displaying sum of array elements
  * DAA-E1-Q3
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class ArraySum {
     public static void main(String[] args) {

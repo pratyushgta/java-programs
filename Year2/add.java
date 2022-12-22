@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * This class contains methods for printing sum of digits of a number
  * OOPJ
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class add {
     Scanner sc = new Scanner(System.in);

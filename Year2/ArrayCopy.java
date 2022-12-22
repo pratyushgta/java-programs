@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * This class contains methods for copying data of array to another array
  * DAA-E1-Q4
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class ArrayCopy {
     public static void main(String[] args) {

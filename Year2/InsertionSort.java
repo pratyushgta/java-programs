@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * This class contains methods for performing Insertion Sort
  * DAA-E1-Q6
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class InsertionSort {
 

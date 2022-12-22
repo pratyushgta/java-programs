@@ -6,7 +6,7 @@ import java.io.*;
 /**
  * This class contains methods for testing basic functions
  * OOPJ
- * @author Pratyush Kumar (pratyushgta@gmail.com)
+ * @author Pratyush Kumar (github.com/pratyushgta)
  */
  class hello {
      Scanner sc = new Scanner(System.in);
