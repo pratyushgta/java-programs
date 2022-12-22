@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * This class contains methods for displaying sum of array elements
- * E1-Q3
+ * DAA-E1-Q3
  * @author Pratyush Kumar (pratyushgta@gmail.com)
  */
 public class ArraySum {

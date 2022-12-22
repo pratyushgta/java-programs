@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * This class contains methods for performing Insertion Sort
- * E1-Q6
+ * DAA-E1-Q6
  * @author Pratyush Kumar (pratyushgta@gmail.com)
  */
 public class InsertionSort {

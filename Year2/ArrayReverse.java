@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * This class contains methods for reversing array elements
- * E1-Q2
+ * DAA-E1-Q2
  * @author Pratyush Kumar (pratyushgta@gmail.com)
  */
 public class ArrayReverse {

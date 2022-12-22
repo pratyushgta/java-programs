@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * This class contains methods for copying data of array to another array
- * E1-Q4
+ * DAA-E1-Q4
  * @author Pratyush Kumar (pratyushgta@gmail.com)
  */
 public class ArrayCopy {
