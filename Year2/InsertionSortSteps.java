@@ -1,13 +1,12 @@
-package Year2;
-
-import java.util.*;
-
 /**
  * This class contains methods for performing Insertion Sort
  * Includes outputs with underlying steps
  * DAA
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+package Year2;
+
+import java.util.*;
 public class InsertionSortSteps {
 
     public static void main(String[] args) {

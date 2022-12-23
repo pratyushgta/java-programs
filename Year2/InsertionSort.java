@@ -1,12 +1,12 @@
-package Year2;
-
-import java.util.*;
-
 /**
  * This class contains methods for performing Insertion Sort
  * DAA-E1-Q6 | DAA-E2-Q3
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+
+package Year2;
+
+import java.util.*;
 public class InsertionSort {
 
     public static void main(String[] args){

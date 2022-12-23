@@ -1,5 +1,3 @@
-package Year2;
-
 /**
  * This class contains methods for finding fibonacci series between 2 and 7
  * Using recursive and iterative methods
@@ -7,6 +5,7 @@ package Year2;
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
+package Year2;
 public class FibonacciRange {
     int fibo_rec(int n){
         if(n<=1)

@@ -1,13 +1,14 @@
-package Year2;
-
-import java.util.*;
-
 /**
  * This class contains methods for finding factorial of a number
  * Using recursive and iterative methods
  * DAA-E2-Q5
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+
+package Year2;
+
+import java.util.*;
+
 public class Factorial {
 
     int fact_rec(int n){

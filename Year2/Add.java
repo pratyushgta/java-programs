@@ -1,3 +1,9 @@
+/**
+ * This class contains methods for adding two numbers
+ * OOPJ-E1-Q1
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year2;
 
 import java.util.*;
@@ -8,7 +14,8 @@ public class Add {
         int b;
 
         System.out.print("Enter 1st number: ");
-        a = sc.nextInt();        System.out.print("Enter 2nd number: ");
+        a = sc.nextInt();
+        System.out.print("Enter 2nd number: ");
         b = sc.nextInt();
 
         System.out.println("Sum is: "+(a+b));

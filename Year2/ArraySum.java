@@ -1,12 +1,11 @@
-package Year2;
-
-import java.util.Scanner;
-
 /**
  * This class contains methods for displaying sum of array elements
  * DAA-E1-Q3
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+package Year2;
+
+import java.util.Scanner;
 public class ArraySum {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -1,11 +1,11 @@
-package Year2;
-
-import java.util.*;
 /**
  * This class contains methods for printing sum of digits of a number
  * OOPJ
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+package Year2;
+
+import java.util.*;
 public class DigitSum {
     Scanner sc = new Scanner(System.in);
 

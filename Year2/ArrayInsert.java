@@ -1,13 +1,12 @@
-package Year2;
-
-import java.util.Scanner;
-
 /**
  * This class contains methods for performing I/O in Arrays
  * DAA-E1-Q1
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
+package Year2;
+
+import java.util.Scanner;
 public class ArrayInsert {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);

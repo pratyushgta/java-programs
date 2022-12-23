@@ -1,13 +1,12 @@
-package Year2;
-
-import java.util.*;
-import java.io.*;
-
 /**
  * This class contains methods for testing basic functions
  * OOPJ
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+
+package Year2;
+
+import java.util.*;
  class hello {
      Scanner sc = new Scanner(System.in);
 

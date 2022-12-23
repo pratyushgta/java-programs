@@ -1,13 +1,11 @@
-package Year2;
-
-import java.util.*;
-
 /**
- * This class contains methods for searching in unsorted array
+ * This class contains methods for searching an unsorted array
  * DAA-E2-Q4
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
+package Year2;
+import java.util.*;
 public class LinearSearch {
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);

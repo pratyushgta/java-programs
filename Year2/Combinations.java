@@ -1,10 +1,10 @@
-package Year2;
-
 /**
  * This class contains methods for printing all possible combinations of truth values
  * DAA-E2-Q2
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+
+package Year2;
 public class Combinations {
     public static void main(String[] args) {
         int n = 4;

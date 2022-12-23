@@ -1,16 +1,18 @@
+/**
+ * This class contains methods for reversing a number
+ * OOPJ-E1-Q2
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year2;
 
 import java.util.*;
-/**
- * This class contains methods for printing sum of digits of a number
- * OOPJ
- * @author Pratyush Kumar (github.com/pratyushgta)
- */
+
 public class Reverse {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int num = 0;
+        int num;
 
         System.out.print("Enter a number: ");
         num = sc.nextInt();

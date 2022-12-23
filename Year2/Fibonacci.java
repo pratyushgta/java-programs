@@ -1,13 +1,13 @@
-package Year2;
-
-import java.util.*;
-
 /**
  * This class contains methods for finding fibonacci series
  * Using recursive and iterative methods
  * DAA
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
+
+package Year2;
+
+import java.util.*;
 
 public class Fibonacci {
     int fibo_rec(int n){
