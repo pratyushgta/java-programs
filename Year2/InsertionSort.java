@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * This class contains methods for performing Insertion Sort
- * DAA-E1-Q6
+ * DAA-E1-Q6 | DAA-E2-Q3
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class InsertionSort {
@@ -14,8 +14,9 @@ public class InsertionSort {
         Scanner sc= new Scanner(System.in);
 
         //Input
-        System.out.print("Enter number of array elements: ");
-        int size = sc.nextInt();
+        //System.out.print("Enter number of array elements: ");
+        //int size = sc.nextInt();
+        int size = 3;
 
         int [] arr = new int[size]; //Initializing the array with given size
 

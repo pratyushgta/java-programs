@@ -24,7 +24,7 @@ public class ArrayInsert {
         }
 
         //Output
-        System.out.println("\nArray:");
+        System.out.println("\nArray elements:");
         for(int i=0; i<size; i++){
             System.out.print(arr[i]+" ");
         }

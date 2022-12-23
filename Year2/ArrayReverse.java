@@ -22,14 +22,6 @@ public class ArrayReverse {
             arr[i] = sc.nextInt();
         }
 
-        //Reverse
-        int[] rev_arr = new int[size];
-        int j = 0;
-        for (int i = size-1; i >= 0; i--) {
-            rev_arr[j] = arr[i];
-            j++;
-        }
-
         //Output
         System.out.println("\nOriginal Array:");
         for (int i = 0; i < size ; i++) {

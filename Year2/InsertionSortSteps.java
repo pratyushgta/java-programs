@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * This class contains methods for performing Insertion Sort
  * Includes outputs with underlying steps
- * DAA-E1-Q6
+ * DAA
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 public class InsertionSortSteps {

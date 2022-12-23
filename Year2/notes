@@ -1,0 +1,4 @@
+CMD commands:
+To compile- javac <program_name>.java
+To run- java <program_name>.java
+

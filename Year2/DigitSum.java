@@ -6,7 +6,7 @@ import java.util.*;
  * OOPJ
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
-public class add {
+public class DigitSum {
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args){
