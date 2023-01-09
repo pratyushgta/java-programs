@@ -18,7 +18,7 @@ public class InsertionSort {
         //int size = sc.nextInt();
         int size = 3;
 
-        int [] arr = new int[size]; //Initializing the array with given size
+        int [] arr = new int[size];
 
         System.out.println("Enter "+size+" elements:");
         for(int i=0; i<size; i++){
@@ -36,6 +36,7 @@ public class InsertionSort {
             }
             arr[j + 1] = key;
         }
+
 
         //Output
         System.out.println("\nSorted Array:");
