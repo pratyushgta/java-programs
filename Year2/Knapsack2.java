@@ -86,10 +86,17 @@ public class Knapsack2 {
             j++;
         }
 
+        //Calculating Profits
+        double total_profit = 0;
+        for(int i=0;i<n;i++){
+            total_profit = profit[i]*x[i];
+        }
+
         //Output
         System.out.print("Value of x: ");
         for (int i = 0; i < n; i++) {
             System.out.print(x[i] + "\t\t");
         }
+        System.out.println("\nTotal profit: "+total_profit);
     }
 }
