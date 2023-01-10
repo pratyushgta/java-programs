@@ -1,6 +1,6 @@
 /**
  * This class contains methods for Knapsack problem in increasing order of weights
- * DAA-E3-Q2
+ * DAA-E3-Q2.iii
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */

@@ -1,6 +1,6 @@
 /**
  * This class contains methods for Knapsack problem in decreasing order of P/W ratio
- * DAA-E3-Q2
+ * DAA-E3-Q2.i
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */

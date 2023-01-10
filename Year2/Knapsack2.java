@@ -1,6 +1,6 @@
 /**
  * This class contains methods for Knapsack problem in decreasing order of profits
- * DAA-E3-Q2
+ * DAA-E3-Q2.ii
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
