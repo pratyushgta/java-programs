@@ -38,13 +38,13 @@ public class Knapsack2 {
         int n; //to store size
 
         //Inputs
-        System.out.print("Enter size: ");
+        System.out.print("****Knapsack problem in decreasing order of profits****\nEnter size: ");
         n = sc.nextInt();
         weights = new double[n];
         profit = new double[n];
         x = new double[n];
 
-        System.out.print("****Knapsack problem in decreasing order of profits****\nEnter total weight: ");
+        System.out.print("Enter total weight: ");
         total_w = sc.nextInt();
 
         System.out.println("\n>>>>Input Weights & Profits<<<<\n");
