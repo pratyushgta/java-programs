@@ -1,5 +1,5 @@
 /**
- * This class contains methods for Knapsack problem in decreasing order of profits
+ * This class contains methods for Knapsack problem in increasing order of weights
  * DAA-E3-Q2
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
@@ -9,22 +9,21 @@ package Year2;
 
 import java.util.Scanner;
 
-public class Knapsack2 {
+public class Knapsack3 {
 
     static void bubble_sort(double[] w, double[] p) { //w = weights p = profit
-        int size = p.length;
+        int size = w.length;
         for (int i = 0; i < size-1; i++) {
             for (int j = 0; j < (size - i - 1); j++) {
-                if (p[j] < p[j+1]) {
-                    double temp_p = p[j];
-                    p[j] = p[j+1];
-                    p[j+1] = temp_p;
-
+                if (w[j] > w[j+1]) {
                     double temp_w = w[j];
                     w[j] = w[j+1];
                     w[j+1] = temp_w;
-                }
 
+                    double temp_p = p[j];
+                    p[j] = p[j+1];
+                    p[j+1] = temp_p;
+                }
             }
         }
     }
@@ -38,13 +37,13 @@ public class Knapsack2 {
         int n; //to store size
 
         //Inputs
-        System.out.print("Enter size: ");
+        System.out.print("****Knapsack problem in decreasing order of profits****Enter size: ");
         n = sc.nextInt();
         weights = new double[n];
         profit = new double[n];
         x = new double[n];
 
-        System.out.print("****Knapsack problem in decreasing order of profits****\nEnter total weight: ");
+        System.out.print("Enter total weight: ");
         total_w = sc.nextInt();
 
         System.out.println("\n>>>>Input Weights & Profits<<<<\n");
@@ -56,7 +55,7 @@ public class Knapsack2 {
             System.out.println();
         }
 
-        //Sorting P & W arrays according to decreasing order of Profits
+        //Sorting P & W arrays according to increasing order of weights
         bubble_sort(weights, profit);
 
         //Knapsack Greedy Algo
@@ -68,6 +67,7 @@ public class Knapsack2 {
                 sum_w += weights[j];
             } else {
                 x[j] = (total_w - sum_w) / weights[j]; //(double) Math.round(((total_w-sum_w)/weights[j])*100)/100;
+                System.out.println(total_w+" "+sum_w+" "+weights[j]);
                 sum_w = total_w;
                 break;
             }
