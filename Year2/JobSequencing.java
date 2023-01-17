@@ -1,9 +1,17 @@
+/**
+ * This class contains methods for implementing Job Sequencing using Greedy Algorithm
+ * DAA-E4-Q2
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
+
 package Year2;
 
 import java.util.Scanner;
 
 public class JobSequencing {
-    static void bubble_sort(int[] d, int[] p, int[] job) { //r = ratio w = weights p = profit
+    static void bubble_sort(int[] d, int[] p, int[] job) { //d = deadlines p = profit
         int size = p.length;
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < (size - i - 1); j++) {
@@ -48,13 +56,13 @@ public class JobSequencing {
             System.out.print("Enter profit " + (i + 1) + ": ");
             profit[i] = sc.nextInt();
             System.out.println();
-
             job[i] = i+1;
         }
 
-        //Sorting P & W arrays according to increasing order of weights
+        //Sorting D, P, J arrays according to decreasing increasing order of profits
         bubble_sort(duration, profit, job);
 
+        //Finding largest duration
         int max = duration[0];
         for(int i = 1; i<n; i++){
             if(duration[i] > max){
@@ -62,6 +70,7 @@ public class JobSequencing {
             }
         }
 
+        //Job Sequencing algorithm
         for(int i=0;i<n;i++){
             for(int j=duration[i]-1;j>=0;j--){
                 if(x[j] == 0){
@@ -70,9 +79,19 @@ public class JobSequencing {
             }
         }
 
+        //Calculating Profits
+        double total_profit = 0;
         for(int i=0;i<max;i++){
-            //System.out.print("J"+job[i]+" ");
-            System.out.print("J"+x[i]+"\t");
+            for(int j=0;j<n;j++){
+                if(x[i] == job[j])
+                    total_profit += profit[j];
+            }
         }
+
+        System.out.print("\nJob Sequence: ");
+        for(int i=0;i<max;i++){
+            System.out.print("J"+x[i]+"  ");
+        }
+        System.out.println("\nTotal profit: "+total_profit);
     }
 }
