@@ -37,6 +37,8 @@ public class ArrayBinarySearch {
     public static void main(String[] args) {
         BinarySearchCalc ob = new BinarySearchCalc();
 
+        ob.size =5;
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter array size: ");
         ob.size = sc.nextInt();
@@ -58,3 +60,39 @@ public class ArrayBinarySearch {
             System.out.println("Element " + ob.search + " NOT found!");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
