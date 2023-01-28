@@ -14,30 +14,39 @@ class DuplicateCalc {
     int count;
     int[] new_arr;
 
-    void duplicate_count() {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; i < size; i++) {
-                if (arr[i] == arr[j])
-                    count++;
+    void bubble_sort(int[] a) {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < (size - i - 1); j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
             }
         }
     }
 
-    void perform() {
-        new_arr = new int[count];
-        for (int i = 0; i < size - count; i++) {
-            for (int j = 0; i < size - count; j++){
-                if (arr[i] == arr[j]) {
-                    new_arr[i] = arr[j];
-                    break;
-                }
-                else {
+    void perform(int[] a){
+        System.out.println("Original Array:");
+        for(int i=0;i<size;i++){
+            System.out.print(a[i]+" ");
+        }
 
-                }
+        new_arr = new int[size];
+        int j=0;
+        for(int i=0;i<size-1;i++){
+            if(a[i] != a[i+1]) {
+                new_arr[j] = a[i];
+                j++;
+            }
+        }
+        new_arr[j++] = arr[size-1];
+
+        System.out.println("\nAfter removing duplicates:");
+        for(int i=0;i<j;i++){
+            System.out.print(new_arr[i]+" ");
         }
     }
-}
-
 }
 
 public class ArrayDuplicate {
@@ -54,7 +63,7 @@ public class ArrayDuplicate {
         for (int i = 0; i < ob.size; i++) {
             ob.arr[i] = sc.nextInt();
         }
-        ob.duplicate_count();
-        System.out.println("Smallest element in array is: " + ob.count + "\nAddress of smallest element in array is: ");
+        ob.bubble_sort(ob.arr);
+        ob.perform(ob.arr);
     }
 }
