@@ -8,6 +8,7 @@
 package Year2;
 
 import java.util.*;
+import java.lang.*;
 
 public class MergeSort {
 
@@ -67,6 +68,35 @@ public class MergeSort {
         mergeSort(R);
         merge(L, R, A); //merge sorted halves
     }
+
+    //naive method
+    void nm_maxmin(int[] A){
+        int max = A[0];
+        int min = A[0];
+
+        for(int i=1;i<A.length;i++){
+            if(A[i] > max)
+                max = A[i];
+            if(A[i] < min)
+                min = A[i];
+        }
+        System.out.println("Minimum element is: " + min);
+        System.out.println("Maximum element is: " + max);
+    }
+
+    //divide-n-conquer
+    /*void dnc_maxmin(int[] A, int x, int y){
+        if(y-x <= 1)
+            return dnc_maxmin(A,Math.max(A[x],A[y]), Math.min(A[x],A[y]))
+
+
+
+        else{
+
+
+        }
+    }*/
+
 
 
     void display(int[] arr){

@@ -1,6 +1,6 @@
 /**
  * This class contains methods for finding largest and smallest element in array
- * OOPJ-E2-Q
+ * OOPJ-E2-Q3
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 

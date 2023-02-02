@@ -1,6 +1,6 @@
 /**
  * This class contains methods for finding 2nd largest element in array
- * OOPJ-E2-Q
+ * OOPJ-E2-Q2
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 

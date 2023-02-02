@@ -1,6 +1,6 @@
 /**
  * This class contains methods for performing binary search
- * OOPJ-E2-Q
+ * OOPJ-E2-Q7
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 

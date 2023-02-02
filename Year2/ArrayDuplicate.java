@@ -1,6 +1,6 @@
 /**
  * This class contains methods for removing duplicate elements from array
- * OOPJ-E2-Q
+ * OOPJ-E2-Q5
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 

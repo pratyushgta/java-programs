@@ -1,6 +1,6 @@
 /**
  * This class contains methods for searching an element in array
- * OOPJ-E2-Q
+ * OOPJ-E2-Q6
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 

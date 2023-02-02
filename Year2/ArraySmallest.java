@@ -1,6 +1,6 @@
 /**
  * This class contains methods for finding smallest element in array
- * OOPJ-E2-Q
+ * OOPJ-E2-Q4
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
