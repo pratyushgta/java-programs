@@ -12,6 +12,9 @@ import java.lang.*;
 
 public class MergeSort {
 
+    int max;
+    int min;
+
     //function to merge left and right subarrays into og array
     void merge(int[] left, int[] right, int[] arr) {
         int sizeL = left.length;
@@ -20,12 +23,12 @@ public class MergeSort {
         int i = 0, j = 0, k = 0;
         //i= smallest unpicked in L, j= smallest unpicked in R, k= index to fill in A
 
-        while(i<sizeL && j<sizeR){
-            if(left[i] < right[j]){
+        while (i < sizeL && j < sizeR) {
+            if (left[i] < right[j]) {
                 arr[k] = left[i];
                 i++;
                 k++;
-            } else{
+            } else {
                 arr[k] = right[j];
                 j++;
                 k++;
@@ -33,13 +36,13 @@ public class MergeSort {
         }
         // after above while loop, only one of below while loops will work
         // because only one subarray will have left over numbers
-        while(i<sizeL){
+        while (i < sizeL) {
             arr[k] = left[i];
             i++;
             k++;
         }
 
-        while(j<sizeR){
+        while (j < sizeR) {
             arr[k] = right[j];
             j++;
             k++;
@@ -69,39 +72,10 @@ public class MergeSort {
         merge(L, R, A); //merge sorted halves
     }
 
-    //naive method
-    void nm_maxmin(int[] A){
-        int max = A[0];
-        int min = A[0];
 
-        for(int i=1;i<A.length;i++){
-            if(A[i] > max)
-                max = A[i];
-            if(A[i] < min)
-                min = A[i];
-        }
-        System.out.println("Minimum element is: " + min);
-        System.out.println("Maximum element is: " + max);
-    }
-
-    //divide-n-conquer
-    /*void dnc_maxmin(int[] A, int x, int y){
-        if(y-x <= 1)
-            return dnc_maxmin(A,Math.max(A[x],A[y]), Math.min(A[x],A[y]))
-
-
-
-        else{
-
-
-        }
-    }*/
-
-
-
-    void display(int[] arr){
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
+    void display(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }

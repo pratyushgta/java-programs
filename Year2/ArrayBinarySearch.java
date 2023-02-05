@@ -17,17 +17,17 @@ class BinarySearchCalc {
     void perform() {
         int left = 0;
         int right = size-1;
-        int mid = 0;
 
-        while(right - left > 1){
-            mid = (left + right)/2;
-            if(mid == search)
-                found=1;
-            else if(arr[mid] < search)
-                left = mid+1;
-            else
-                right = mid;
-
+        while(left <= right){
+            int mid = (left + right)/2;
+            if(search > arr[mid])
+                left = mid + 1;
+            else if(search < arr[mid])
+                right = mid - 1;
+            else{
+                found = 1;
+                break;
+            }
         }
     }
 }
@@ -36,9 +36,6 @@ class BinarySearchCalc {
 public class ArrayBinarySearch {
     public static void main(String[] args) {
         BinarySearchCalc ob = new BinarySearchCalc();
-
-        ob.size =5;
-
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter array size: ");
         ob.size = sc.nextInt();

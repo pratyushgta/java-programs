@@ -12,6 +12,7 @@ public class Casting {
         String z = "8008";
         char w = '8';
 
+
         long l = x;
         System.out.println("Original Integer number: "+x+"\nCasted to Double: "+(double)x+"\nCasted to String: "+String.valueOf(x)
                 +"\nCasted to long: "+l);
