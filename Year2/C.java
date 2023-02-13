@@ -5,12 +5,7 @@
  */
 package Year2;
 
-class MainClass
+class C extends B implements A
 {
-    public static void main(String[] args)
-    {
-        A a = new C();
 
-        a.myMethod();
-    }
 }
