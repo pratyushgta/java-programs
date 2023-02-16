@@ -1,12 +1,15 @@
-//NOT COMPLETE
-package Year2.codechef;
+/**
+ * These classes contain methods for
+ * CC-A1-Q6 [STARTER 77 on 15-02-2023]
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
 
+package Year2.codechef;
 import java.util.*;
 import java.lang.*;
-import java.io.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
-class Codechef
+class SpreadingCharges
 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

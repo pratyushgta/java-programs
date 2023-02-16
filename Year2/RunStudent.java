@@ -1,6 +1,6 @@
 /**
- * These classes contain methods for
- * OOPJ-E4-Q
+ * These classes contain methods for implementing inheritance to find class marks
+ * OOPJ-E4-Q1
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 

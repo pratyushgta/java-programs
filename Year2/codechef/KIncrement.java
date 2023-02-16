@@ -1,3 +1,10 @@
+/**
+ * These classes contain methods for
+ * CC-A1-Q7 [STARTER 77 on 15-02-2023]
+ * GIVES WRONG OUTPUT FOR ALL HIDDEN TEST CASES
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year2.codechef;
 
 import java.util.Scanner;

@@ -1,3 +1,10 @@
+/**
+ * These classes contain methods for finding prime and non-prime numbers
+ * OOPJ-B1-M1-Q1
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year2.TestQuestions;
 
 import java.util.*;
@@ -10,10 +17,6 @@ public class B1M1Q1 {
         if(n%2==0) {
             //even
         }
-
-
-
-
         if(n==0 || n==1)
             System.out.println("Not prime");
         else{
