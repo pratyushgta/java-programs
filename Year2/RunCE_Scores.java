@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 class CE_Scores {
     int[][] numbers = new int[6][2];
+
     CE_Scores() {
         System.out.println(">>INPUT<<");
         Scanner sc = new Scanner(System.in);

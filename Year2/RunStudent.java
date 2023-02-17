@@ -21,18 +21,20 @@ class student {
     void inputdata() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println(">>> Input Student Data <<<");
+        System.out.println(">>>Input Student Data<<<");
         System.out.print("Enter name: ");
-        name = sc.next();
+        name = sc.nextLine();
         System.out.print("Enter roll no.: ");
         roll = sc.nextInt();
-        System.out.print("Enter d.o.b: ");
+        sc.nextLine();
+        System.out.print("Enter D.O.B: ");
         dob = sc.next();
+        sc.nextLine();
     }
 
     void printdata() {
-        System.out.println(">>> Student details <<<\nName: " + name +
-                "Roll no.: " + roll + "DOB: " + dob);
+        System.out.println("\n>>>Student details<<<\nName: " + name +
+                "\nRoll no.: " + roll + "\nDOB: " + dob);
     }
 }
 
@@ -75,7 +77,7 @@ class marks extends student {
 
     void showdata() {
         super.printdata();
-        System.out.println("Maths: "+m+"\nPhysics: "+p+"\nChemistry: "+c+
+        System.out.println("---MARKS---\nMaths: "+m+"\nPhysics: "+p+"\nChemistry: "+c+
                 "\nCS: "+cts+"\nEnglish"+e+"\nTotal: "+tot+"\nPercentage: "+per+"\nGrade: "+gd);
     }
 }
