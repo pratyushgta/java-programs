@@ -3,14 +3,12 @@
  * OOPJ
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
-package Year2;
+package Year2.classwork;
 
-class MainClass
+import Year2.classwork.A;
+import Year2.classwork.B;
+
+class C extends B implements A
 {
-    public static void main(String[] args)
-    {
-        A a = new C();
 
-        a.myMethod();
-    }
 }

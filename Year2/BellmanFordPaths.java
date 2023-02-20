@@ -1,5 +1,5 @@
 /**
- * This class contains methods for implementing Bellman-Ford algorithm using dynamic programming
+ * This class contains methods for finding shortest paths using Bellman-Ford algorithm
  * DAA-E8
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
@@ -9,13 +9,19 @@ package Year2;
 
 import java.util.Scanner;
 
-public class BellmanFord {
+public class BellmanFordPaths {
     void shortestPath(int[][] G, int[] dist, int vertices) {
+        int[] prev = new int[vertices];
+        for (int i = 0; i < vertices; i++) {
+            prev[i] = -1;
+        }
+
         for (int i = 0; i < vertices - 1; i++) {
             for (int u = 0; u < vertices; u++) {
                 for (int v = 0; v < vertices; v++) {
                     if (dist[u] != Integer.MAX_VALUE / 2 && (dist[u] + G[u][v]) < dist[v]) {
                         dist[v] = dist[u] + G[u][v];
+                        prev[v] = u; //updating predecessor of v
                     }
                 }
             }
@@ -32,14 +38,27 @@ public class BellmanFord {
         }
 
         //display the shortest distances
-        System.out.println("\n> SHORTEST DISTANCES from source:\nVertex\t\tDistance");
+        System.out.println("\n> SHORTEST DISTANCES from source:\nVertex\t\tDistance\tPath");
         for (int i = 0; i < vertices; ++i) {
-            System.out.println(i + "\t\t\t" + dist[i]);
+            System.out.print(i + "\t\t\t" + dist[i] + "\t\t\t");
+            printPath(prev, i);
+            System.out.println();
+        }
+    }
+
+    void printPath(int[] pred, int v) {
+        if (v == 0) {
+            System.out.print(v);
+        } else if (pred[v] == -1) {
+            System.out.print("No path");
+        } else {
+            printPath(pred, pred[v]);
+            System.out.print(" -> " + v);
         }
     }
 
     public static void main(String[] args) {
-        BellmanFord ob = new BellmanFord();
+        BellmanFordPaths ob = new BellmanFordPaths();
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number of vertices: ");

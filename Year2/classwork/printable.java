@@ -5,7 +5,7 @@
  */
 
 
-package Year2;
+package Year2.classwork;
 
 public interface printable {
     void print();

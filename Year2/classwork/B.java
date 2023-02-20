@@ -3,7 +3,7 @@
  * OOPJ
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
-package Year2;
+package Year2.classwork;
 
 class B
 {

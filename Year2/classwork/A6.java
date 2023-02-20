@@ -4,8 +4,9 @@
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
-package Year2;
-public class A6 implements printable{
+package Year2.classwork;
+
+public class A6 implements printable {
     public void print(){
         System.out.println("Hello!");
     }

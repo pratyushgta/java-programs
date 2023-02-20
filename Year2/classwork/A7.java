@@ -1,6 +1,6 @@
-package Year2;
+package Year2.classwork;
 
-public class A7 implements printable,Showable{
+public class A7 implements printable, Showable {
 
     @Override
     public void show() {

@@ -4,9 +4,10 @@
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
-package Year2;
+package Year2.classwork;
+
 import java.util.*;
-public class calculator2 implements calculate{
+public class calculator2 implements calculate {
     public void add(int x, int y) {
         System.out.println("\nAddition is: "+(x+y));
 
