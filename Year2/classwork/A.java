@@ -8,6 +8,8 @@ package Year2.classwork;
 interface A
 {
     void myMethod();
+
+    int i =111;
 }
 
 
