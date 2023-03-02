@@ -12,7 +12,7 @@ package Year2;
 import java.util.Scanner;
 
 public class MultistageGraph {
-    public static int backwardApproach(int[][] G, int vertices) {
+    public static int forwardApproach(int[][] G, int vertices) {
         int[] cost = new int[vertices];
         cost[vertices - 1] = 0;
         int max = Integer.MAX_VALUE;
@@ -30,7 +30,7 @@ public class MultistageGraph {
         return cost[0];
     }
 
-    public static int forwardApproach(int[][] G, int vertices) {
+    public static int backwardApproach(int[][] G, int vertices) {
         int[] cost = new int[vertices];
         cost[0] = 0;
         int max = Integer.MAX_VALUE;
