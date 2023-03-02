@@ -1,0 +1,197 @@
+void dnc_maxmin2(int[] A, int i, int j, int min, int max){
+        if(i==j)
+            min = max = A[i];
+        else if(i+1 == j){
+            if(A[i] < A[j]){
+                min = A[i];
+                max = A[j];
+            } else{
+                min = A[j];
+                max = A[i];
+            }
+        } else{
+            int mid = (i+j)/2;
+            int leftMin = 0;
+            int leftMax = 0;
+            int rightMin = 0;
+            int rightMax = 0;
+
+            dnc_maxmin2(A, i, mid, leftMin, leftMax);
+            dnc_maxmin2(A, mid+1,j,rightMin,rightMax);
+            min = Math.min(leftMin,rightMin);
+            max = Math.max(leftMax,rightMax);
+            System.out.println("\n\n>>Divide & Conquer Method<<\nMinimum element is: " + min + "\nMaximum element is: " + max);
+
+        }
+    }
+
+    int dnc_max(int[] A, int i, int j) {
+        if (i == j)
+            return A[i];
+        else if (i + 1 == j) {
+            if (A[i] < A[j])
+                return A[j];
+            else
+                return A[i];
+        } else {
+
+            int mid = (i + j) / 2;
+            int maxLeft = 0;
+            int maxRight = 0;
+
+            maxLeft = dnc_max(A, i, mid);
+            maxRight = dnc_max(A, mid + 1, j);
+
+            return Math.max(maxLeft, maxRight);
+        }
+    }
+
+    int dnc_min(int[] A, int i, int j) {
+        if (i == j)
+            return A[i];
+        else if (i + 1 == j) {
+            if (A[i] < A[j])
+                return A[i];
+            else
+                return A[j];
+        } else {
+
+            int mid = (i + j) / 2;
+            int minLeft = 0;
+            int minRight = 0;
+
+            minLeft = dnc_max(A, i, mid);
+            minRight = dnc_max(A, mid + 1, j);
+
+            return Math.min(minLeft, minRight);
+        }
+    }
+
+
+    //divide-n-conquer
+    /*void dnc_maxmin(int[] A, int size) {
+        int mid;
+        if (size == 1) { //if there is only 1 element in array
+            max = A[0];
+            min = A[0];
+        } else if (size == 2) { //if there are 2 elements in array
+            if (A[0] > A[1]) {
+                max = A[0];
+                min = A[1];
+            } else {
+                max = A[1];
+                min = A[0];
+            }
+        } else {
+            mid = size / 2;
+            dnc_maxmin(A,mid);
+            int max1 = max;
+            int min1 = min;
+            dnc_maxmin(A, size - mid);
+
+            if (min1 < min)
+                min = min1;
+
+            if (max1 > max)
+                max = max1;
+            System.out.println("\n\n>>Divide & Conquer Method<<\nMinimum element is: " + min + "\nMaximum element is: " + max);
+        }
+    }*/
+
+    ----------------------------
+    package Year2;
+
+    public class MergeSort2 {
+            static void getMinMax(int[] A, int i, int j, int[] result)
+            {
+                int mid;
+
+                /* If there is only one element then return it as min and max both */
+                if (i == j) {
+                    result[0] = A[i];
+                    result[1] = A[i];
+                    return;
+                }
+
+                /* If there are two elements */
+                if (j == i + 1) {
+                    if (A[i] > A[j]) {
+                        result[0] = A[j];
+                        result[1] = A[i];
+                    }
+                    else {
+                        result[0] = A[i];
+                        result[1] = A[j];
+                    }
+                    return;
+                }
+
+            /* If there are more than 2 elements, then initialize min
+               and max by dividing the array into 2 halves */
+                mid = (i + j) / 2;
+                int[] result1 = new int[2];
+                int[] result2 = new int[2];
+                getMinMax(A, i, mid, result1);
+                getMinMax(A, mid + 1, j, result2);
+
+                /* compare minimums of two parts */
+                if (result1[0] < result2[0])
+                    result[0] = result1[0];
+                else
+                    result[0] = result2[0];
+
+                /* compare maximums of two parts */
+                if (result1[1] > result2[1])
+                    result[1] = result1[1];
+                else
+                    result[1] = result2[1];
+
+                return;
+            }
+
+            public static void main(String[] args)
+            {
+                int arr[] = {1000, 11, 445, 1, 330, 3000};
+                int n = 6;
+                int[] result = new int[2];
+                getMinMax(arr, 0, n - 1, result);
+                System.out.println("Minimum element is " + result[0]);
+                System.out.println("Maximum element is " + result[1]);
+            }
+        }
+
+
+------------------------------
+package Year2;
+
+public class MinMax {
+    public static void main(String[] args) {
+        int[] A = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int n = A.length;
+        int min = 0, max = 0;
+        getMinMax(A, 0, n-1, min, max);
+        System.out.println("Minimum element: " + min);
+        System.out.println("Maximum element: " + max);
+    }
+
+    public static void getMinMax(int[] A, int i, int j, int min, int max) {
+        if (i == j) {
+            min = max = A[i];
+        } else if (i + 1 == j) {
+            if (A[i] < A[j]) {
+                min = A[i];
+                max = A[j];
+            } else {
+                min = A[j];
+                max = A[i];
+            }
+        } else {
+            int mid = (i + j) / 2;
+            int leftMin = 0, leftMax = 0, rightMin = 0, rightMax = 0;
+            getMinMax(A, i, mid, leftMin, leftMax);
+            getMinMax(A, mid + 1, j, rightMin, rightMax);
+            min = Math.min(leftMin, rightMin);
+            max = Math.max(leftMax, rightMax);
+        }
+    }
+}

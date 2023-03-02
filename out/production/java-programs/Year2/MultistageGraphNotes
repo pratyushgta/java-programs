@@ -1,0 +1,254 @@
+/*int[][] c = {{0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 1, 2, 5, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 4, 11, 0, 0},
+                {0, 0, 0, 0, 0, 9, 5, 16, 0},
+                {0, 0, 0, 0, 0, 0, 0, 2, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 18},
+                {0, 0, 0, 0, 0, 0, 0, 0, 13},
+                {0, 0, 0, 0, 0, 0, 0, 0, 2},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0}};
+        int[][] c = {{max, max, max, max, max, max, max, max, max},
+                {max, max, 1, 2, 5, max, max, max, max},
+                {max, max, max, max, max, 4, 11, max, max},
+                {max, max, max, max, max, 9, 5, 16, max},
+                {max, max, max, max, max, max, max, 2, 0},
+                {max, max, max, max, max, max, max, max, 18},
+                {max, max, max, max, max, max, max, max, 13},
+                {max, max, max, max, max, max, max, max, 2},
+                {max, max, max, max, max, max, max, max, max}};*/
+
+  ---------------
+  package Year2;
+
+  import java.util.Arrays;
+  import java.util.Scanner;
+
+  public class MultistageGraph2 {
+      static final int N = 100;
+      static int n, k;
+      static double[][] cost = new double[N][N];
+      static double[] b_cost = new double[N];
+      static int[] d = new int[N];
+      static int[] p = new int[N];
+
+      public static void BGraph(double[][] G, int K, int N, int[] P) {
+          b_cost[1] = 0.0;
+          for (int j = 2; j <= n; j++) {
+              double min_cost = Double.POSITIVE_INFINITY;
+              int r = 0;
+              for (int i = 1; i < j; i++) {
+                  if (G[i][j] != 0 && b_cost[i] + G[i][j] < min_cost) {
+                      min_cost = b_cost[i] + G[i][j];
+                      r = i;
+                  }
+              }
+              b_cost[j] = min_cost;
+              d[j] = r;
+          }
+
+          // find minimum cost path
+          P[1] = 1;
+          P[K] = N;
+          for (int j = K - 1; j >= 2; j--) P[j] = d[P[j + 1]];
+      }
+
+      public static void main(String[] args) {
+          Scanner scan = new Scanner(System.in);
+
+          // Input section, read the graph
+          n = scan.nextInt();
+          k = scan.nextInt();
+          for (int i = 1; i <= n; i++) {
+              for (int j = 1; j <= n; j++) {
+                  cost[i][j] = scan.nextDouble();
+              }
+          }
+
+          BGraph(cost, k, n, p);
+
+          // Output section, print the minimum cost and path
+          System.out.println("Minimum cost: " + b_cost[n]);
+          System.out.println("Minimum cost path: " + Arrays.toString(p));
+      }
+  }
+--------------------
+
+
+package Year2;
+
+import java.util.*;
+
+public class MultistageGraph3 {
+    static int n = 99999;
+
+    public static int shortest(int[][] G, int v) {
+        int[] cost = new int[v];
+
+        cost[v-1] = 0;
+
+        for(int i = v-2; i>=0; i--) {
+            cost[i] = n;
+
+            for(int j = i; j<v; j++) {
+                if(G[i][j] == n) {
+                    continue;
+                }
+
+                cost[i] = Math.min(cost[i], (G[i][j] + cost[j]));
+            }
+        }
+
+        return cost[0];
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of vertices: ");
+        int v = sc.nextInt();
+        int[][] G = new int[v][v];
+
+        for(int i = 0; i<v; i++) {
+            System.out.println("Enter adjacency value for vertex_" + (i+1) + ": ");
+            for(int j = 0; j<v; j++) {
+                G[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("\nEnter costs for vertices: ");
+        for(int i = 0; i<v; i++) {
+            for(int j = 0; j<v; j++) {
+                if(G[i][j] == 0) {
+                    G[i][j] = n;
+                    continue;
+                }
+                System.out.print((i+1) + " to " + (j+1) + ": ");
+                G[i][j] = sc.nextInt();
+
+            }
+        }
+
+        System.out.println("\nAnswer is " + shortest(G, v));
+    }
+}
+
+
+-----------------------
+
+
+package Year2;
+
+import java.util.Arrays;
+
+public class graph {
+    private static final int MAX = Integer.MAX_VALUE;
+    private int vertices;
+
+    int n = Integer.MAX_VALUE;
+    private int[] cost;
+
+    public graph(int stages) {
+        //this.stages = stages;
+        cost = new int[stages];
+        Arrays.fill(cost, MAX);
+    }
+
+    public int getMinimumCost(int[][] G, int vertices) {
+        cost = new int[vertices];
+        cost[vertices-1] = 0;
+
+        for (int i = vertices - 2; i >= 0; i--) {
+            cost[i]= n;
+
+            for (int j = i; j < vertices; j++) {
+                if(G[i][j] == n){
+                    continue;
+                }
+                cost[i] = Math.min(cost[i], G[i][j] + cost[i + j + 1]);
+            }
+        }
+        return cost[0];
+    }
+
+    public static void main(String[] args) {
+        int[][] costMatrix = {{4, 1, 5, 6},
+                {2, 9, 2, 8},
+                {3, 7, 5, 5}};
+        graph mcp = new graph(costMatrix.length);
+        //System.out.println("Minimum cost: " + mcp.getMinimumCost(costMatrix));
+    }
+}
+
+
+
+----------------------
+
+package Year2;
+
+import java.util.Scanner;
+
+public class MinCostPath {
+    static final int MAX = 100;
+
+    // Backward approach for finding the minimum cost path
+    static int backwardDP(int stage, int cost[][], int dp[]) {
+        dp[stage] = 0;
+        for (int i = stage - 1; i >= 0; i--) {
+            int minCost = Integer.MAX_VALUE;
+            for (int j = i + 1; j <= stage; j++) {
+                if (cost[i][j] != Integer.MAX_VALUE && dp[j] != Integer.MAX_VALUE &&
+                        minCost > dp[j] - cost[i][j]) {
+                    minCost = dp[j] - cost[i][j];
+                }
+            }
+            dp[i] = minCost;
+        }
+        return dp[0];
+    }
+
+    // Forward approach for finding the minimum cost path
+    static int forwardDP(int stage, int cost[][], int dp[]) {
+        dp[0] = 0;
+        for (int i = 1; i <= stage; i++) {
+            int minCost = Integer.MAX_VALUE;
+            for (int j = 0; j < i; j++) {
+                if (cost[j][i] != Integer.MAX_VALUE && dp[j] != Integer.MAX_VALUE &&
+                        minCost > dp[j] + cost[j][i]) {
+                    minCost = dp[j] + cost[j][i];
+                }
+            }
+            dp[i] = minCost;
+        }
+        return dp[stage];
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of stages in the graph: ");
+        int stage = sc.nextInt();
+        int cost[][] = new int[MAX][MAX];
+        int dp[] = new int[MAX];
+        for (int i = 0; i < stage; i++) {
+            for (int j = 0; j < stage; j++) {
+                cost[i][j] = Integer.MAX_VALUE;
+            }
+        }
+        System.out.println("Enter the cost matrix:");
+        for (int i = 0; i < stage; i++) {
+            for (int j = 0; j < stage; j++) {
+                cost[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < stage; i++) {
+            dp[i] = Integer.MAX_VALUE;
+        }
+        System.out.println("Minimum cost by backward approach: " + backwardDP(stage, cost, dp));
+        for (int i = 0; i < stage; i++) {
+            dp[i] = Integer.MAX_VALUE;
+        }
+        System.out.println("Minimum cost by forward approach: " + forwardDP(stage, cost, dp));
+    }
+}
+
+
+----------------------------
