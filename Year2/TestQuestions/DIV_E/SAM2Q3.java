@@ -8,9 +8,9 @@ public class SAM2Q3 {
 
         } catch(Exception e){
             System.out.println("Exception");
-        } catch(ArithmeticException ae){
+        } /*catch(ArithmeticException ae){
             System.out.println("Arithmathc Exception");
-        }
+        }*/
         System.out.println("Finished");
     }
 }
