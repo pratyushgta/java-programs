@@ -1,3 +1,12 @@
+/**
+ * These classes contain methods for implementing n-Queens problem using backtracking algorithm
+ * DAA-E9
+ * NOTE: Instead of iterating over the rows, iterate over the columns.
+ * This ensures that the solutions are generated in lexicographic order.
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year2;
 
 
@@ -6,13 +15,13 @@ import java.util.Scanner;
 public class QueensGambit {
     public static int N;
 
-    boolean findQueens(int[][] board, int row) {
-        if (row == N)
+    boolean findQueens(int[][] board, int col) {
+        if (col >= N)
             return true;
-        for (int col = 0; col < N; col++) {
+        for (int row = 0; row < N; row++) {
             if (isValid(board, row, col)) {
                 board[row][col] = 1;
-                if (findQueens(board, row + 1))
+                if (findQueens(board, col + 1))
                     return true;
                 board[row][col] = 0;
             }
@@ -24,10 +33,11 @@ public class QueensGambit {
         int tempR = r;
         int tempC = c;
 
-        for (int i = 0; i < r; i++) {
-            if (board[i][c] == 1)
+        for (int i = 0; i < c; i++) {
+            if (board[r][i] == 1)
                 return false;
         }
+
 
         while (tempR >= 0 && tempC >= 0) {
             if (board[tempR][tempC] == 1)
@@ -38,7 +48,7 @@ public class QueensGambit {
 
         tempR = r;
         tempC = c;
-        while (tempC >= 0 && tempR < board.length) {
+        while (tempC >= 0 && tempR < N) {
             if (board[tempR][tempC] == 1)
                 return false;
             tempR++;
@@ -48,7 +58,7 @@ public class QueensGambit {
     }
 
     public static void main(String[] args) {
-        BacktrackingQueens ob = new BacktrackingQueens();
+        QueensGambit ob = new QueensGambit();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of queens: ");
         N = sc.nextInt();
@@ -60,12 +70,15 @@ public class QueensGambit {
                 board[i][j] = 0;
             }
         }
-        ob.findQueens(board, 0);
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++)
-                System.out.print(" " + board[i][j]
-                        + " ");
-            System.out.println();
+
+        if (ob.findQueens(board, 0)) {
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++)
+                    System.out.print(" " + board[i][j] + " ");
+                System.out.println();
+            }
+        } else {
+            System.out.println("No solution exists for the given board size");
         }
 
     }
