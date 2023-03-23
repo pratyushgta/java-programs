@@ -1,86 +1,81 @@
+/**
+ * This class contains methods for implementing a traffic light using Swing
+ * OOPJ-E7-Q1
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
 package Year2;
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class TrafficLight {
-    private JFrame mainFrame;
-    private JPanel controlPanel;
-    private JLabel redLabel;
-    private JLabel yellowLabel;
-    private JLabel greenLabel;
+    JFrame f;
+    JLabel redLight;
+    JLabel yellowLight;
+    JLabel greenLight;
 
-    public TrafficLight() {
-        prepareGUI();
+    public void create() {
+        f = new JFrame("ReadySetPo");
+        f.setSize(400, 500);
+        f.setLayout(new GridLayout(3, 1));
+
+        redLight = new JLabel();
+        redLight.setOpaque(true);
+        redLight.setBackground(Color.BLACK);
+        redLight.setSize(100, 100);
+        f.add(redLight);
+
+        yellowLight = new JLabel();
+        yellowLight.setOpaque(true);
+        yellowLight.setBackground(Color.BLACK);
+        yellowLight.setSize(100, 100);
+        f.add(yellowLight);
+
+        greenLight = new JLabel();
+        greenLight.setOpaque(true);
+        greenLight.setBackground(Color.BLACK);
+        greenLight.setSize(100, 100);
+        f.add(greenLight);
+
+        f.setVisible(true);
+
     }
 
-    public static void main(String[] args) {
-        TrafficLight trafficLightSimulator = new TrafficLight();
-        trafficLightSimulator.showTrafficLight();
-    }
-
-    private void prepareGUI() {
-        mainFrame = new JFrame("Traffic Light Simulator");
-        mainFrame.setSize(400, 600);
-        mainFrame.setLayout(new GridLayout(3, 1));
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        controlPanel = new JPanel();
-        controlPanel.setLayout(new FlowLayout());
-
-        mainFrame.add(controlPanel);
-
-        redLabel = new JLabel();
-        redLabel.setOpaque(true);
-        redLabel.setBackground(Color.gray);
-        redLabel.setPreferredSize(new Dimension(100, 100));
-        controlPanel.add(redLabel);
-
-        yellowLabel = new JLabel();
-        yellowLabel.setOpaque(true);
-        yellowLabel.setBackground(Color.gray);
-        yellowLabel.setPreferredSize(new Dimension(100, 100));
-        controlPanel.add(yellowLabel);
-
-        greenLabel = new JLabel();
-        greenLabel.setOpaque(true);
-        greenLabel.setBackground(Color.gray);
-        greenLabel.setPreferredSize(new Dimension(100, 100));
-        controlPanel.add(greenLabel);
-
-        mainFrame.setVisible(true);
-    }
-
-    private void showTrafficLight() {
+    public void automate(){
         while (true) {
             try {
                 setRed();
-                Thread.sleep(5000);
-                setGreen();
-                Thread.sleep(5000);
+                Thread.sleep(2000);
                 setYellow();
                 Thread.sleep(2000);
+                setGreen();
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
     }
 
-    private void setRed() {
-        redLabel.setBackground(Color.red);
-        yellowLabel.setBackground(Color.gray);
-        greenLabel.setBackground(Color.gray);
+    public void setRed() {
+        redLight.setBackground(Color.red);
+        yellowLight.setBackground(Color.gray);
+        greenLight.setBackground(Color.gray);
     }
 
-    private void setYellow() {
-        redLabel.setBackground(Color.gray);
-        yellowLabel.setBackground(Color.yellow);
-        greenLabel.setBackground(Color.gray);
+    public void setYellow() {
+        redLight.setBackground(Color.gray);
+        yellowLight.setBackground(Color.yellow);
+        greenLight.setBackground(Color.gray);
     }
 
-    private void setGreen() {
-        redLabel.setBackground(Color.gray);
-        yellowLabel.setBackground(Color.gray);
-        greenLabel.setBackground(Color.green);
+    public void setGreen() {
+        redLight.setBackground(Color.gray);
+        yellowLight.setBackground(Color.gray);
+        greenLight.setBackground(Color.green);
+    }
+    public static void main(String[] args) throws InterruptedException {
+        TrafficLight ob = new TrafficLight();
+        ob.create();
+        ob.automate();
     }
 }
