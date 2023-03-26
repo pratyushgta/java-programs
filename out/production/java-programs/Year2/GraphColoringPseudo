@@ -1,0 +1,26 @@
+mColoring(graph, numColors)
+    colors = [0] * numVertices
+    if mColoringUtil(graph, numColors, colors, 0):
+        print "Solution exists. The color configuration is:"
+        print colors
+    else:
+        print "Solution does not exist."
+
+mColoringUtil(graph, numColors, colors, vertex)
+    if vertex == numVertices:
+        return true
+
+    for color = 1 to numColors:
+        if isSafe(graph, colors, vertex, color):
+            colors[vertex] = color
+            if mColoringUtil(graph, numColors, colors, vertex + 1):
+                return true
+            colors[vertex] = 0 // backtrack
+
+    return false
+
+isSafe(graph, colors, vertex, color)
+    for i = 0 to numVertices - 1:
+        if graph[vertex][i] == 1 and colors[i] == color:
+            return false
+    return true

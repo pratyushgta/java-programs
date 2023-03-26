@@ -1,3 +1,9 @@
+/**
+ * This class contains methods for 0/1 Knapsack problem
+ * DAA
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
 package Year2;
 
 import java.util.Scanner;
@@ -62,14 +68,14 @@ public class Knapsack01 {
                 if (weights[i - 1] > j) {
                     t[i][j] = t[i - 1][j];
                 }
-                // Otherwise, take the maximum of the value of not taking the item and taking the item
+                // Else take the maximum of the value of not taking the item vs taking the item
                 else {
                     t[i][j] = Math.max(t[i - 1][j], t[i - 1][j - weights[i - 1]] + prices[i - 1]);
                 }
             }
         }
 
-
+        //Combination of weights to be selected
         int rem_wt = t[n][total_w];
         for (int i = n; i > 0; i--) {
             for (int j = total_w; j > 0; j--) {
