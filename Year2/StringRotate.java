@@ -7,6 +7,7 @@ package Year2;
 
 import java.util.Scanner;
 
+
 public class StringRotate {
     void rotate(String A, String B) {
         String front_rotation="";//first 2 chars from front of string get attached to back of it
