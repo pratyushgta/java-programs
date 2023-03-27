@@ -69,24 +69,25 @@ public class JobSequencing {
                 max = duration[i];
             }
         }
-
+        double total_profit = 0;
         //Job Sequencing algorithm
         for(int i=0;i<n;i++){
             for(int j=duration[i]-1;j>=0;j--){
                 if(x[j] == 0){
                     x[j] = job[i];
+                    total_profit+=profit[i];
                 }
             }
         }
 
         //Calculating Profits
-        double total_profit = 0;
+        /*double total_profit = 0;
         for(int i=0;i<max;i++){
             for(int j=0;j<n;j++){
                 if(x[i] == job[j])
                     total_profit += profit[j];
             }
-        }
+        }*/
 
         System.out.print("\nJob Sequence: ");
         for(int i=0;i<max;i++){
