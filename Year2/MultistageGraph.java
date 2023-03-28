@@ -35,9 +35,11 @@ public class MultistageGraph {
         cost[0] = 0;
         int max = Integer.MAX_VALUE;
 
-        for (int i = 1; i < vertices; i++) {
+        for (int i = 1; i < vertices; i++)
+        {
             cost[i] = max;
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < i; j++)
+                {
                 if (G[j][i] == max) {
                     continue;
                 }

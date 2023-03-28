@@ -36,8 +36,8 @@ public class QueensGambit {
                 return false;
         }
         //checking column attacks/ vertical/ Up - Down
-        for(int i=0;i<r;i++){
-            if(board[i][c]==1)
+        for (int i = 0; i < r; i++) {
+            if (board[i][c] == 1)
                 return false;
         }
 
@@ -75,7 +75,7 @@ public class QueensGambit {
         //lower right diagonal
         tempR = r;
         tempC = c;
-        while (tempC  < N && tempR < N) {
+        while (tempC < N && tempR < N) {
             if (board[tempR][tempC] == 1)
                 return false;
             tempR++;
