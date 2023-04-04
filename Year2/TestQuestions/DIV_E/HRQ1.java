@@ -22,7 +22,6 @@ class MyBook extends Book{
         title = s;
     }
 }
-
 public class HRQ1{
  public static void main(String[] args){
      MyBook ob = new MyBook();
