@@ -11,11 +11,11 @@ class Rectangle{
     }
 
     void area(){
-        System.out.println("Area of rectangle is: "+(length*breadth));
+        System.out.println("Area is: "+(length*breadth));
     }
 
     void perimeter(){
-        System.out.println("Perimeter of rectangle is: "+2*(length+breadth));
+        System.out.println("Perimeter is: "+2*(length+breadth));
     }
 }
 
