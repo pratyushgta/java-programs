@@ -45,8 +45,8 @@ public class Calculator {
                             input="";
                         }
                         else if (clicked.equalsIgnoreCase("=")) {
-                            operand.add(Integer.parseInt(input));
-                            if (operator.size() != operand.size()+1) {
+                            if (operator.size() != operand.size()+1 && !input.equals("")) {
+                                operand.add(Integer.parseInt(input));
                                 String r = calculate();
                                 result.setText(r);
                             } else {
