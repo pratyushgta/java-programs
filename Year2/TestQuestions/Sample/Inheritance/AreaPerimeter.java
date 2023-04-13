@@ -19,17 +19,10 @@ class Rectangle{
     }
 }
 
-class Square extends Rectangle{
-    Square(int s){
-        super(s,s);
+class Square extends Rectangle {
+    Square(int s) {
+        super(s, s);
 
-    }
-    void area(){
-        System.out.println("Area of rectangle is: "+(length*breadth));
-    }
-
-    void perimeter(){
-        System.out.println("Perimeter of rectangle is: "+2*(length+breadth));
     }
 }
 public class AreaPerimeter {
