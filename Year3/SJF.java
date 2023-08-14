@@ -1,6 +1,6 @@
 /**
- * This class contains methods for implementing First Come, First Served (FCFS) scheduling algorithm
- * OS-E3
+ * This class contains methods for implementing Shortest Job First (SJF) scheduling algorithm
+ * OS-E4
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
@@ -8,29 +8,7 @@ package Year3;
 
 import java.util.Scanner;
 
-public class FCFS {
-
-    static void bubble_sort(int[] P, int[] BT, int[] AT) { //p=process bt=butter_time at=arrival_time
-        int size = AT.length;
-        for (int i = 0; i < size-1; i++) {
-            for (int j = 0; j < (size - i - 1); j++) {
-                if (AT[j] > AT[j+1]) {
-                    int temp_at = AT[j];
-                    AT[j] = AT[j+1];
-                    AT[j+1] = temp_at;
-
-                    int temp_bt = BT[j];
-                    BT[j] = BT[j+1];
-                    BT[j+1] = temp_bt;
-
-                    int temp_p = P[j];
-                    P[j] = P[j+1];
-                    P[j+1] = temp_p;
-                }
-            }
-        }
-    }
-
+public class SJF {
     public static void main(String[] args){
         int[] P;
         int[] BT;
@@ -38,7 +16,9 @@ public class FCFS {
         int[] WT;
         int[] TAT;
         int[] CT;
+        int[] F;
         int n;
+        int[] completed; // array to store executed processes
 
         Scanner sc = new Scanner(System.in);
 
@@ -51,6 +31,7 @@ public class FCFS {
         WT = new int[n];
         TAT = new int[n];
         CT = new int[n];
+        completed = new int[n];
 
         System.out.println("\n>>>>Input BT & AT<<<<\n");
         for (int i = 0; i < n; i++) {
@@ -62,7 +43,31 @@ public class FCFS {
             P[i] = i+1;
         }
 
-        bubble_sort(P,BT,AT);
+        int start_time = 0; // store start time of process
+        int completed_count = 0; // store count of completed processes
+
+        while (completed_count < n) {
+            int shortest_process = n; // process # with shortest BT
+            int minBT = Integer.MAX_VALUE; // stores shortest BT
+
+            for (int i = 0; i < n; i++) {
+                if (AT[i] <= start_time && completed[i] == 0 && BT[i] < minBT) {
+                    minBT = BT[i];
+                    shortest_process = i;
+                }
+            }
+            if (shortest_process == n) {
+                start_time++;
+            } else {
+                completed[shortest_process] = 1; // mark that process as completed
+                CT[shortest_process] = start_time + BT[shortest_process];
+                start_time += BT[shortest_process]; // update start time for next process
+                TAT[shortest_process] = CT[shortest_process] - AT[shortest_process];
+                WT[shortest_process] = TAT[shortest_process] - BT[shortest_process];
+                P[completed_count] = shortest_process + 1;
+                completed_count++;
+            }
+        }
 
         System.out.println("Process execution in order: ");
         for(int i=0;i<n;i++) {
@@ -70,33 +75,20 @@ public class FCFS {
         }
         System.out.println();
 
-        //Calculate Completion Time
-        CT[0] = BT[0];
-        for(int i=1;i<n;i++){
-            CT[i] = CT[i-1] + BT[i];
-        }
-        //Calculate Turnaround Time
-        for(int i=0;i<n;i++){
-            TAT[i]=CT[i]-AT[i];
-        }
+
         //Calculate Average Turnaround Time
-        double ATAT=0;
-        int sum2=0;
+        double sum2=0;
         for(int i=0;i<n;i++){
             sum2+=TAT[i];
         }
-        ATAT = sum2/n;
-        //Calculate Waiting Time
-        for(int i=0;i<n;i++){
-            WT[i]=TAT[i]-BT[i];
-        }
+        double ATAT = sum2/n;
+
         //Calculate Await Time
-        double AWT=0;
-        int sum=0;
+        double sum=0;
         for(int i=0;i<n;i++){
             sum+=WT[i];
         }
-        AWT = sum/n;
+        double AWT = sum/n;
 
         //Outputs
         System.out.println("Completion Time:");
@@ -115,5 +107,6 @@ public class FCFS {
         }
         System.out.println();
         System.out.println("Await Time: "+AWT+"\nAverage Turnaround Time: "+ATAT);
+
     }
 }
