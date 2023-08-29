@@ -65,7 +65,7 @@ class CWord
         }
     }
 
-    public static void main() throws IOException
+    public static void main(String[] args) throws IOException
     {
         CWord ob=new CWord();
         ob.read();
