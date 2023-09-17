@@ -1,3 +1,10 @@
+/**
+ * This class contains methods for implementing Bankers Algorithm for Deadlock avoidance
+ * OS-E7
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year3;
 
 import java.util.Scanner;
