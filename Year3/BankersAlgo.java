@@ -53,7 +53,7 @@ public class BankersAlgo {
 
     // Check if the system is in a safe state
     public boolean isSafe() {
-        boolean[] finish = new boolean[numProcesses];
+        boolean[] finish = new boolean[numProcesses]; // safe sequence. make it int
         int[] work = new int[numResources];
         System.arraycopy(available, 0, work, 0, numResources);
 
