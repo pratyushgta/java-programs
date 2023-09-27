@@ -61,7 +61,7 @@ public class BankersAlgorithm {
         return true;
     }
 
-    public void isSafe() {
+    public boolean isSafe() {
         int[] safe_sequence = new int[n];
         boolean[] done = new boolean[n];
         int count = 0;
@@ -80,16 +80,86 @@ public class BankersAlgorithm {
                 }
             }
             if (!allocated) {
-                System.out.println("Unsafe state. Unable to allocate resources.");
-                break;
+                //System.out.println("Unsafe state. Unable to allocate resources.");
+                //break;
+                return false;
             }
         }
         if (count == n) {
-            System.out.println("Safe sequence:");
+            System.out.println("\nSafe sequence:");
             for (int i = 0; i < n; i++) {
                 System.out.print("P" + safe_sequence[i]);
                 if (i != n - 1)
                     System.out.print(" -> ");
+            }
+        }
+        return true;
+    }
+
+    public void resourceRequest(int process, int[] request) {
+        if (process < 0 || process >= n) {
+            System.out.println("\nInvalid process number!");
+        } else if (request.length != m) {
+            System.out.println("\nInvalid count of requested resources!");
+        } else {
+            for (int i = 0; i < m; i++) {
+                if (request[i] > need[process][i] || request[i] > available[i]) {
+                    System.out.println("\nRequest DENIED. Exceeds maximum available resources!");
+                    return;
+                }
+            }
+
+            // Temporarily allocate resources to check for safety
+            for (int i = 0; i < m; i++) {
+                available[i] -= request[i];
+                allocation[process][i] += request[i];
+                need[process][i] -= request[i];
+            }
+
+            if (isSafe()) {
+                System.out.println("\nRequest GRANTED. System would be in a safe state.");
+            } else {
+                System.out.println("\nRequest DENIED. System would be in an unsafe state.");
+
+                // Rollback the allocation
+                for (int i = 0; i < m; i++) {
+                    available[i] += request[i];
+                    allocation[process][i] -= request[i];
+                    need[process][i] += request[i];
+                }
+            }
+        }
+    }
+
+
+    public void menu() {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.print("\n>>>> BANKER'S ALGORITHM <<<<\n1. Check for safety\n2. Request resources\n3. Give up...\n\nEnter choice: ");
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    if (isSafe()) {
+                        System.out.println("\nThe current state is safe.");
+                    } else {
+                        System.out.println("\nUnsafe state. Unable to allocate resources.");
+                    }
+                    break;
+                case 2:
+                    System.out.print("\nEnter the process number (0 to " + (n - 1) + "): ");
+                    int process = sc.nextInt();
+                    System.out.print("Enter the requested resources (space-separated): ");
+                    int[] request = new int[m];
+                    for (int i = 0; i < m; i++) {
+                        request[i] = sc.nextInt();
+                    }
+                    resourceRequest(process, request);
+                    break;
+                case 3:
+                    System.exit(0);
+                default:
+                    System.out.println("\nHeh! You thought this hasn't been accounted for?");
             }
         }
     }
@@ -102,6 +172,6 @@ public class BankersAlgorithm {
         int r = sc.nextInt();
         BankersAlgorithm ob = new BankersAlgorithm(p, r);
         ob.input();
-        ob.isSafe();
+        ob.menu();
     }
 }
