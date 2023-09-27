@@ -73,15 +73,12 @@ public class BankersAlgorithm {
                     for (int j = 0; j < m; j++) {
                         available[j] += allocation[i][j];
                     }
-                    //System.out.println("Allocated process : " + i);
                     allocated = done[i] = true;
                     safe_sequence[count] = i;
                     count++;
                 }
             }
             if (!allocated) {
-                //System.out.println("Unsafe state. Unable to allocate resources.");
-                //break;
                 return false;
             }
         }
