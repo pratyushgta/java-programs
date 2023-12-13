@@ -1,6 +1,6 @@
 /**
- * This class contains methods for understanding basic object calling
- * MSA-Lab_Work_1
+ * This class contains methods for understanding 7 types of basic methods & object calling
+ * MSA-Lab Practise 1
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */

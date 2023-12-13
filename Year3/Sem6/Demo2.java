@@ -1,8 +1,15 @@
-package Year3.Sem6;
+/**
+ * This class contains methods for understanding getter-setter and toString methods
+ * MSA-Lab Practise 2
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
 
+package Year3.Sem6;
 public class Demo2 {
     double width, height;
 
+    // auto-generated using Code > Generate > Getter and Setter
     public double getWidth() {
         return width;
     }
@@ -19,6 +26,7 @@ public class Demo2 {
         this.height = height;
     }
 
+    // auto-generated using Code > Generate > toString
     @Override
     public String toString() {
         return "Demo2{" +

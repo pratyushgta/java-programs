@@ -1,3 +1,10 @@
+/**
+ * This class contains methods for understanding ArrayLists
+ * MSA-Lab Practise 3
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year3.Sem6;
 
 import java.util.ArrayList;
@@ -31,7 +38,3 @@ public class Demo3 {
         ob.output();
     }
 }
-// intelli j installation
-// practise 7 types of methods
-// getter setter toString methods
-// arraylists
