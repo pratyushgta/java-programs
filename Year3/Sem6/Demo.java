@@ -1,3 +1,10 @@
+/**
+ * This class contains methods for understanding basic object calling
+ * MSA-Lab_Work_1
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year3.Sem6;
 
 public class Demo {
