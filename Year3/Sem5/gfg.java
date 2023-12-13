@@ -1,4 +1,4 @@
-package Year3;
+package Year3.Sem5;
 
 class GFG {
     static int size = 8;

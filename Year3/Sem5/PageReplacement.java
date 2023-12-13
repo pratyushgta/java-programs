@@ -4,7 +4,7 @@
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
-package Year3;
+package Year3.Sem5;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
