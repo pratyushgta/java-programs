@@ -1,0 +1,5 @@
+>> LAB 1 <<
+1. IntelliJ installation
+2. Practised 7 types of methods
+3. Looked at getter-setter & toString method implementation
+4. Implementation of ArrayLists
