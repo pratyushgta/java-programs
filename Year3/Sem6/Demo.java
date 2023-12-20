@@ -1,11 +1,16 @@
 /**
- * This class contains methods for understanding 7 types of basic methods & object calling
- * MSA-Lab Practise 1
+ * This class contains methods for understanding 9 types of basic methods & object calling
+ * MSA-Lab-1 [13-12-2023] Practise 1 & Lab 2 [20-12-2023] Practise 1
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */
 
 package Year3.Sem6;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Demo {
 
@@ -44,6 +49,32 @@ public class Demo {
         return arr;
     }
 
+    List<ABC> meth8() {
+        ABC a1 = new ABC();
+        ABC a2 = new ABC();
+        ABC a3 = new ABC();
+
+        List<ABC> list = new ArrayList<>();
+        list.add(a1);
+        list.add(a2);
+        list.add(a3);
+
+        return list;
+    }
+
+    Map<Integer, ABC> meth9() {
+        ABC a1 = new ABC();
+        ABC a2 = new ABC();
+        ABC a3 = new ABC();
+
+        HashMap<Integer, ABC> map = new HashMap<>();
+        map.put(1, a1);
+        map.put(2, a2);
+        map.put(3, a3);
+
+        return map;
+    }
+
     public static void main(String[] args) {
         Demo ob = new Demo();
 
@@ -74,6 +105,16 @@ public class Demo {
         ABC[] arr2 = ob.meth7();
         System.out.println(arr2[1]);
         arr2[1].m();
+
+        System.out.println("\nOutput of meth8:");
+        List<ABC> l = ob.meth8();
+        System.out.println(l);
+        l.get(0).m();
+
+        System.out.println("\nOutput of meth9:");
+        Map<Integer, ABC> map = ob.meth9();
+        System.out.println(map);
+        map.get(1).m();
 
 
     }

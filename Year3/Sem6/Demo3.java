@@ -1,6 +1,6 @@
 /**
  * This class contains methods for understanding ArrayLists
- * MSA-Lab Practise 3
+ * MSA-Lab-1 [13-12-2023] Practise 3
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */

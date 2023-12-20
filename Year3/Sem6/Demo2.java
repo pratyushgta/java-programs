@@ -1,6 +1,6 @@
 /**
  * This class contains methods for understanding getter-setter and toString methods
- * MSA-Lab Practise 2
+ * MSA-Lab-1 [13-12-2023] Practise 2
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
  */

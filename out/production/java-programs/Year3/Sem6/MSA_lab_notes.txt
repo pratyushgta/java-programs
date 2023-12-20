@@ -1,11 +1,11 @@
->> LAB 1 << [13-12-2023]
+>> LAB 1 <<
 1. IntelliJ installation
 2. Practised 7 types of methods
 3. Looked at getter-setter & toString method implementation
 4. Implementation of ArrayLists
 
->> LAB 2 << [20-12-2023]
+>> LAB 2 <<
 1. Lambda expressions
 2. Generics
 3. Hash Maps
-4. HW: Watch videos on Collections
+4. HW: Videos on Collections
