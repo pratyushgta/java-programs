@@ -9,3 +9,26 @@
 2. Generics
 3. Hash Maps
 4. HW: Watch videos on Collections
+
+>> LAB 3 << [03-01-2023]
+> NOTES
+1. Maven is a build tool.
+2. No one uses Spring. They use SpringBoot because of less config.
+3. We use SpringBoot because it uses a container which manages objects, create objects, dependency injection
+
+GroupID = Package Name
+Artifact ID = Project Name
+
+STEP 1- Visit Spring initializer website
+STEP 2- Choose > Project: Maven, Language: Java, Spring Boot: 3.2.1, Packaging: Jar, Java 21, Dependencies: Spring web
+STEP 3- Download and extract the zip. Open the project in IntelliJ: File > Open > demo
+STEP 4- Run the project. Go to browser and type: http://localhost:8080 . It should show a whitelabel error page
+STEP 5- Right click on com.example.demo > create a new package and name it 'controller'
+STEP 6- Right click on controller package > create a new class: 'MyController'
+STEP 7- Run the code again. Go to browser and type: http://localhost:8080/display .
+It should display contents returned by method in MyController class
+
+> SESSION SUMMARY
+1. Configuring IntelliJ and Eclipse IDE
+2. Creating new maven project: File > New > Project... > Lang: Java, Build System: Maven
+3. SpringBoot Hello World program
