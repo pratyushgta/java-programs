@@ -24,11 +24,13 @@ STEP 2- Choose > Project: Maven, Language: Java, Spring Boot: 3.2.1, Packaging: 
 STEP 3- Download and extract the zip. Open the project in IntelliJ: File > Open > demo
 STEP 4- Run the project. Go to browser and type: http://localhost:8080 . It should show a whitelabel error page
 STEP 5- Right click on com.example.demo > create a new package and name it 'controller'
-STEP 6- Right click on controller package > create a new class: 'MyController'
-STEP 7- Run the code again. Go to browser and type: http://localhost:8080/display .
+STEP 6- Right click on controller package > create a new class: 'MyController' > write RestController and RestMapping code
+STEP 7- Re-run the code. Go to browser and type: http://localhost:8080/display .
 It should display contents returned by method in MyController class
 
 > SESSION SUMMARY
 1. Configuring IntelliJ and Eclipse IDE
 2. Creating new maven project: File > New > Project... > Lang: Java, Build System: Maven
 3. SpringBoot Hello World program
+
+
