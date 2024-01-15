@@ -1,3 +1,10 @@
+/**
+ * This class contains client side methods implementing a chatbot that answers client's questions automatically
+ * DC-E2
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year3.Sem6.DC;
 
 import java.io.BufferedReader;

@@ -1,3 +1,10 @@
+/**
+ * This class contains server side methods for performing two-way-remote client & server communication
+ * DC-E2
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year3.Sem6.DC;
 
 import java.io.*;

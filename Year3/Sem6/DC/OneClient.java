@@ -1,5 +1,5 @@
 /**
- * This class contains methods for
+ * This class contains client side methods for performing one-way client & server communication
  * DC-E2
  *
  * @author Pratyush Kumar (github.com/pratyushgta)
