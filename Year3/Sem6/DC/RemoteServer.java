@@ -16,7 +16,7 @@ public class RemoteServer {
         String str = "", str2 = "";
         while (!str.equals("stop")) {
             str = din.readUTF();
-            System.out.println("Charchit said: " + str);
+            System.out.println("Server said: " + str);
             System.out.print("Server reply: ");
             str2 = br.readLine();
             dout.writeUTF(str2);
