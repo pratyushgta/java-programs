@@ -23,8 +23,8 @@ public class ChatBotClient {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String str = "", str2 = "";
-        while (!str.equals("stop")) {
-            System.out.print("-> Client reply: ");
+        while (!str.contains("goodbye")) {
+            System.out.print("-> Client says: ");
             str = br.readLine();
             dout.writeUTF(str);
             dout.flush();

@@ -14,7 +14,7 @@ import java.net.Socket;
 
 public class RemoteClient {
     public static void main(String args[]) throws Exception {
-        Socket s = new Socket("10.125.42.107", 6363);
+        Socket s = new Socket("103.152.126.255", 6363);
         DataInputStream din = new DataInputStream(s.getInputStream());
         DataOutputStream dout = new DataOutputStream(s.getOutputStream());
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
