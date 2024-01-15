@@ -13,7 +13,7 @@ import java.net.Socket;
 
 public class RemoteServer {
     public static void main(String[] args) throws IOException {
-        ServerSocket ss = new ServerSocket(3333);
+        ServerSocket ss = new ServerSocket(6363);
         Socket s = ss.accept();
         DataInputStream din = new DataInputStream(s.getInputStream());
         DataOutputStream dout = new DataOutputStream(s.getOutputStream());
@@ -23,11 +23,12 @@ public class RemoteServer {
         String str = "", str2 = "";
         while (!str.equals("stop")) {
             str = din.readUTF();
-            System.out.println("Server said: " + str);
-            System.out.print("Server reply: ");
+            System.out.println("Client said: " + str);
+            System.out.print("-> Server says: ");
             str2 = br.readLine();
             dout.writeUTF(str2);
             dout.flush();
+            System.out.println(">>Message Sent to client<<");
         }
         din.close();
         s.close();

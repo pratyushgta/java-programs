@@ -14,11 +14,11 @@ import java.net.Socket;
 public class OneServer {
     public static void main(String[] args) {
         try {
-            ServerSocket ss = new ServerSocket(6666);
+            ServerSocket ss = new ServerSocket(6363);
             Socket s = ss.accept();
             DataInputStream dis = new DataInputStream(s.getInputStream());
             String str = dis.readUTF();
-            System.out.println("message= " + str);
+            System.out.println("Client said: " + str);
             ss.close();
         } catch (Exception e) {
             System.out.println(e);

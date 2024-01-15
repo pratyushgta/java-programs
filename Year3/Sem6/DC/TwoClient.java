@@ -15,18 +15,20 @@ import java.net.Socket;
 
 public class TwoClient {
     public static void main(String args[]) throws Exception {
-        Socket s = new Socket("localhost", 3333);
+        Socket s = new Socket("localhost", 6363);
         DataInputStream din = new DataInputStream(s.getInputStream());
         DataOutputStream dout = new DataOutputStream(s.getOutputStream());
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String str = "", str2 = "";
         while (!str.equals("stop")) {
+            System.out.print("-> Client says: ");
             str = br.readLine();
             dout.writeUTF(str);
             dout.flush();
+            System.out.println(">>Message Sent to server<<");
             str2 = din.readUTF();
-            System.out.println("Server says: " + str2);
+            System.out.println("Server said: " + str2);
         }
 
         dout.close();
