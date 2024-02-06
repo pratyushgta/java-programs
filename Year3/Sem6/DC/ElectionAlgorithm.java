@@ -1,3 +1,10 @@
+/**
+ * This class contains methods to implement Election Algorithm using Bully’s method
+ * DC-E5
+ *
+ * @author Pratyush Kumar (github.com/pratyushgta)
+ */
+
 package Year3.Sem6.DC;
 
 import java.util.ArrayList;
@@ -30,9 +37,9 @@ class Process {
 public class ElectionAlgorithm {
     List<Process> processes;
     int tot_process;
-    Process coordinator;
+    Process coordinator, failed;
 
-    public void initialise(int tot_process, int start) {
+    public ElectionAlgorithm(int tot_process, int start, int failed) {
         this.tot_process = tot_process;
         this.processes = new ArrayList<>();
 
@@ -41,14 +48,16 @@ public class ElectionAlgorithm {
         }
 
         this.coordinator = processes.get(start - 1);
-        System.out.println("Current coordinator: " + coordinator.getId());
+        this.failed = processes.get(failed - 1);
+
     }
 
     public void electCoordinator() {
         List<Process> receivedOK = new ArrayList<>();
+        System.out.println("Current coordinator: " + coordinator.getId());
 
-        processes.get(6).deactivate();
-        System.out.println(processes.get(6).getId() + " failed");
+        failed.deactivate();
+        System.out.println(failed.getId() + " failed");
 
         int current = coordinator.getId();
 
@@ -71,6 +80,7 @@ public class ElectionAlgorithm {
             current++;
         }
         System.out.println(receivedOK.get(receivedOK.size() - 1).getId() + " sends coordinator to all");
+        coordinator = receivedOK.get(receivedOK.size() - 1);
     }
 
 
@@ -79,11 +89,13 @@ public class ElectionAlgorithm {
         System.out.print("Enter total processes: ");
         int total = sc.nextInt();
 
-        System.out.print("Enter starting node: ");
+        System.out.print("Enter the process initiated election: ");
         int s_node = sc.nextInt();
 
-        ElectionAlgorithm ob = new ElectionAlgorithm();
-        ob.initialise(total, s_node);
+        System.out.print("Enter the process that failed: ");
+        int f_node = sc.nextInt();
+
+        ElectionAlgorithm ob = new ElectionAlgorithm(total, s_node, f_node);
         ob.electCoordinator();
     }
 }
