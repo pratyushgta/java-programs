@@ -23,8 +23,7 @@ public class socket_server {
         while (!str.contains("goodbye")) {
             str = din.readUTF();
             System.out.println("\nClient said: " + str);
-
-            if (str.length() != 5) {
+            if (str.split(" ").length != 3) {
                 str2 = "Invalid input format. Input format: num1 <operator> num2";
             } else {
                 str2 = ob.calculate(str);
